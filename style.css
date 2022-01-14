@@ -46,17 +46,17 @@ body {
     transition: all 1s;
 }
 .btn.zero {
-   width: 70%;
+   width: 45%;
    border-bottom-left-radius: 20px;
 }
 .btn.special {
-    background-color: rgb(245, 100, 42);
+    background-color: rgba(245, 99, 42, 0.959);
 }
 .bottom {
     border-bottom-right-radius: 20px;
 }
 .btn:hover {
-    filter: brightness(25%);
+    filter: brightness(55%);
 }
 .top {
     border-top-right-radius: 20px;
