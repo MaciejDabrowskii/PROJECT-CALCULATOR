@@ -1,20 +1,41 @@
-// const { number } = require("prop-types");
-
 let action = "";
-let num1 = [];
 let num2 = [];
+let num1 = 0;
 let displayValue = 0;
-
-// BUTTONS
 var buttonNumber = document.querySelectorAll(".btn.nbr");
+var display = document.querySelector(".display");
+var buttonSpecial  = document.querySelectorAll(".btn.special");
+// BUTTONS
+
+setInterval(refresh, 10);
+
 for (let i = 0; i < buttonNumber.length; i++) {
     buttonNumber[i].addEventListener("click", function (e) {
         let contents = buttonNumber[i].innerHTML;
-        num1.push(contents)
-        displayValue = Number(num1.join().replace(/,/g, ''))
+        num2.push(contents)
+        displayValue = Number(num2.join().replace(/,/g, ''))
         })
     }
-var display = document.querySelector(".display");
+for (let j = 0; j < buttonSpecial.length; j++) {
+    buttonSpecial[j].addEventListener("click", function (e) {
+        if (buttonSpecial[j].innerHTML == "+") {
+            plus();
+        }else if (buttonSpecial[j].innerHTML == "-") {
+            minus();
+        }else if (buttonSpecial[j].innerHTML == "*") {
+            mltp();
+        }else if (buttonSpecial[j].innerHTML == "/") {
+            dvd();
+        }else if (buttonSpecial[j].innerHTML == "C") {
+            reset()
+        }else if (buttonSpecial[j].innerHTML == "=") {
+            execute();
+        }
+        
+    })
+}
+
+// function 
 
 function adding(a, b) {
    let result =  a + b;
@@ -34,27 +55,53 @@ function divide (a, b) {
 }
 function operate(num1, num2, action) {
      if (action == "plus") {
-      console.log(adding(aa,bb));
+        displayValue = adding(num1,num2);
       return adding(num1,num2)    
     } else if (action == "minus") {
-      console.log(susbstracting(num1, num2));
+        displayValue =susbstracting;
       return susbstracting(num1, num2)
     }else if (action == "mltp") {
-      console.log(multiply(num1, num2));
+        displayValue = multiply(num1, num2);
       return multiply(num1, num2)
     }else if (action == "dvd") {
-      console.log(divide(num1, num2));
+        displayValue = divide(num1, num2);
       return divide(num1, num2)
     }
 }
 function switcher() {
-    if (num1[0] == number) {
-        return 2
-    } else {
-        return 1
-    }
+num1 = Number(num2.join().replace(/,/g, ''));
+num2 = [];
 }
 function refresh() {
     display.innerHTML = displayValue;
 }
-setInterval(refresh, 10);
+function plus() {
+    action = "plus";
+    displayValue = "+";
+    switcher();
+}
+function minus() {
+    action = "minus";
+    displayValue = "-"
+    switcher();
+}
+function mltp() {
+    action = "mltp";
+    displayValue = "*"
+    switcher();
+}
+function dvd() {
+    action = "dvd";
+    displayValue = "/"
+    switcher();
+}
+function reset() {
+    action = "";
+    num2 = [];
+    num1 = 0;
+    displayValue = 0;
+}
+function execute() {
+    num2 = Number(num2.join().replace(/,/g, ''));
+    operate(num1, num2, action);
+}
