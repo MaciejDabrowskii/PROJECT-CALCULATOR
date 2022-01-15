@@ -16,10 +16,11 @@ body {
     border-radius: 30px;
     box-shadow: rgba(255, 255, 255, 0.25) 0px 54px 55px, rgba(255, 255, 255, 0.12) 0px -12px 30px, rgba(255, 255, 255, 0.12) 0px 4px 6px, rgba(255, 255, 255, 0.17) 0px 12px 13px, rgba(255, 255, 255, 0.09) 0px -3px 5px;
 }
-.display {
+.screen {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+
     flex: 2 1 auto;
     width: 66.5%;
     min-height: 20%;
@@ -27,6 +28,25 @@ body {
     background-color:rgba(46, 214, 178, 0.938); 
     border-top-left-radius: 20px;
     font: bolder 30px Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.operator {
+    flex: 0 1 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+    height: 30%;
+    border: 10px double  rgba(245, 99, 42, 0.959);
+    border-radius: 30px;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+.num {
+    flex: 1 1 auto;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
 }
 .gora {
     flex-direction: row;
