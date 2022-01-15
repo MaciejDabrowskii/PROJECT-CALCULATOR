@@ -22,7 +22,7 @@ body {
     align-items: flex-start;
 
     flex: 2 1 auto;
-    width: 66.5%;
+    width: 65.5%;
     min-height: 20%;
     border: 5px solid black;
     background-color:rgba(46, 214, 178, 0.938); 
@@ -40,6 +40,7 @@ body {
     border-radius: 30px;
     margin-top: 5px;
     margin-left: 5px;
+    font-size: 40px;
 }
 .num {
     flex: 1 1 auto;
@@ -63,11 +64,31 @@ body {
     justify-content: center;
     align-items: center;
     font: bolder 30px Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    transition: all 1s;
+    transition: all 0.05s;
 }
 .btn.zero {
    width: 45%;
    border-bottom-left-radius: 20px;
+}
+.bspc {
+    width: 97%;
+    max-height: 50%;
+    display: flex;
+    flex: 1 1 auto;
+    border: 5px solid black;
+    border-top-right-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(245, 99, 42, 0.959);
+    /* border-top: 0px; */
+}
+.del {
+    width: 97%;
+    max-height: 45%;
+    border: 5px solid black;
+    /* border-bottom: 0px;
+    border-left: 0px; */
+    font-size: 40px;
 }
 .btn.special {
     background-color: rgba(245, 99, 42, 0.959);
@@ -76,13 +97,35 @@ body {
     border-bottom-right-radius: 20px;
 }
 .btn:hover {
-    filter: brightness(55%);
+    filter: brightness(85%);
 }
 .top {
+    display: flex;
+    flex: 1 1 auto;
+    width: 20%;
+    min-height: 18%;
+    border-right: 5px solid black;
+    flex-direction: column;
     border-top-right-radius: 20px;
 }
-.clicking {
-    transform: scale(1.2);
-    border: color rgb(248, 190, 0);;
-    box-shadow: 0 0 10px rgb(248, 190, 0);;
+.pushed {
+    transform: scale(1.1);
+    border-color: rgba(46, 214, 178, 0.938);
+    box-shadow: 0 0 20px rgba(46, 214, 178, 0.938);
+}
+.bspc {
+    width: 97%;
+    max-height: 50%;
+    display: flex;
+    flex: 1 1 auto;
+    border: 5px solid black;
+    border-top-right-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    min-height: 18%;
+    font: bolder 30px Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    transition: all 0.05s;
+}
+.bspc:hover {
+    filter: brightness(85%);
 }
