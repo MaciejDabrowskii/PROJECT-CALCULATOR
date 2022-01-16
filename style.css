@@ -5,7 +5,6 @@ body {
     background: url(background.jpg);
     background-size: auto;
 }
-
 .calc {
     width: 600px;
     height: 950px;
@@ -80,15 +79,13 @@ body {
     justify-content: center;
     align-items: center;
     background-color: rgba(245, 99, 42, 0.959);
-    /* border-top: 0px; */
 }
 .del {
     width: 97%;
     max-height: 45%;
     border: 5px solid black;
-    /* border-bottom: 0px;
-    border-left: 0px; */
     font-size: 40px;
+    background-color: rgba(245, 99, 42, 0.959);
 }
 .btn.special {
     background-color: rgba(245, 99, 42, 0.959);
