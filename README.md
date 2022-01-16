@@ -30,3 +30,5 @@ EXTRA CREDIT: Make it look nice! This is a great project to practice your CSS sk
 EXTRA CREDIT: Add a “backspace” button, so the user can undo if they click the wrong number.
 EXTRA CREDIT: Add keyboard support!
 
+https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/calculator
+
