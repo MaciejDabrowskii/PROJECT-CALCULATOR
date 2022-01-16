@@ -109,6 +109,7 @@ body {
     transform: scale(1.1);
     border-color: rgba(46, 214, 178, 0.938);
     box-shadow: 0 0 20px rgba(46, 214, 178, 0.938);
+    filter: brightness(75%);
 }
 .bspc {
     width: 97%;

@@ -4,16 +4,14 @@ let display = "";
 let operatorDisplay = "";
 let temp;
 let iteration = 0;
-
-var buttonNumber = document.querySelectorAll(".btn.nbr");
-var num = document.querySelector(".num");
-var operator = document.querySelector(".operator");
-var buttonSpecial  = document.querySelectorAll(".btn.special.fn");
-var del = document.querySelector(".btn.del");
-var equal = document.querySelector(".btn.special.eq");
-var btns = document.querySelectorAll(".btn");
-var bspc = document.querySelector(".bspc");
-
+const buttonNumber = document.querySelectorAll(".btn.nbr");
+const num = document.querySelector(".num");
+const operator = document.querySelector(".operator");
+const buttonSpecial  = document.querySelectorAll(".btn.special.fn");
+const del = document.querySelector(".btn.del");
+const equal = document.querySelector(".btn.special.eq");
+const btns = document.querySelectorAll(".btn");
+const bspc = document.querySelector(".bspc");
 // Functions handling mouse clicks on divs
 bspc.addEventListener("click", (e) => {
         backspace();
@@ -55,7 +53,7 @@ window.addEventListener('keydown', (event) => {
     const keyNbr = document.querySelector(`.nbr[data-key="${event.code}"]`);
     const keyBspc = document.querySelector(`.bspc[data-key="${event.code}"]`);
     const keyDel = document.querySelector(`.del[data-key="${event.code}"]`);
-    console.log(keySpecial)
+
     if (keySpecial !== null) {
         if (iteration == 0) {
             enteredNumbers = Number(enteredNumbers);
@@ -64,8 +62,16 @@ window.addEventListener('keydown', (event) => {
             operatorDisplay = keySpecial.innerHTML;
             display = temp;
             iteration += 1;
+            keySpecial.classList.add("pushed")
+            setTimeout(() => {
+                keySpecial.classList.remove("pushed")
+                }, 100);
         } else if (enteredNumbers == "") {
             operatorDisplay = keySpecial.innerHTML;
+            keySpecial.classList.add("pushed")
+            setTimeout(() => {
+            keySpecial.classList.remove("pushed")
+            }, 100);
         } else {
             enteredNumbers = Number(enteredNumbers);
             operate(temp, enteredNumbers);
@@ -73,14 +79,30 @@ window.addEventListener('keydown', (event) => {
             temp = results;
             enteredNumbers = "";
             operatorDisplay = keySpecial.innerHTML;
-        };
+            keySpecial.classList.add("pushed")
+            setTimeout(() => {
+            keySpecial.classList.remove("pushed")
+            }, 100);
+    };
     }else if (keyNbr !== null) {
         enteredNumbers += keyNbr.innerHTML;
         display = enteredNumbers;
+        keyNbr.classList.add("pushed")
+        setTimeout(() => {
+        keyNbr.classList.remove("pushed")
+        }, 100);
     }else if (keyBspc !== null) {
         backspace();
+        keyBspc.classList.add("pushed")
+        setTimeout(() => {
+        keyBspc.classList.remove("pushed")
+        }, 100);
     }else if (keyDel !== null) {
         deletion();
+        keyDel.classList.add("pushed")
+        setTimeout(() => {
+        keyDel.classList.remove("pushed")
+        }, 100);
     }
 });
 // Functions adding style on click
