@@ -169,7 +169,7 @@ function multiply(a, b) {
 };
 function divide(a, b) {
     if (a == 0 || b == 0) {
-        return display = "Divided by 0 Matrix.fatalError"
+        return display = "Szczepański ciągnie koniu"
     } else {
     return (a / b);
     }

@@ -2,8 +2,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url(background.jpg);
-    background-size: auto;
+    background-color: rgba(128, 128, 128, 0.959);
+    /* background: url(background.jpg);
+    background-size: auto; */
 }
 .calc {
     width: 600px;
