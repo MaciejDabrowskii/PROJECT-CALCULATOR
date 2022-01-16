@@ -2,6 +2,9 @@
 I'm going to combine everything i’ve learned so far: i'm going to make an on-screen calculator using JavaScript, HTML, and CSS.
 
 Assignment:
+
+https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/calculator
+
 Here are some use cases (abilities your project needs to have):
 
 Your calculator is going to contain functions for all of the basic math operators you typically find on simple calculators, so start by creating functions for the following items and testing them in your browser’s console.
@@ -30,5 +33,5 @@ EXTRA CREDIT: Make it look nice! This is a great project to practice your CSS sk
 EXTRA CREDIT: Add a “backspace” button, so the user can undo if they click the wrong number.
 EXTRA CREDIT: Add keyboard support!
 
-https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/calculator
+
 
