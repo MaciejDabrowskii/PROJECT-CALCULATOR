@@ -20,7 +20,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-
     flex: 2 1 auto;
     width: 65.5%;
     min-height: 20%;
@@ -28,9 +27,10 @@ body {
     background-color:rgba(46, 214, 178, 0.938); 
     border-top-left-radius: 20px;
     font: bolder 30px Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    word-break: break-all;
 }
 .operator {
-    flex: 0 1 auto;
+    flex: 0 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,7 +67,7 @@ body {
     transition: all 0.05s;
 }
 .btn.zero {
-   width: 45%;
+   width: 20%;
    border-bottom-left-radius: 20px;
 }
 .bspc {

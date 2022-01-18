@@ -4,7 +4,7 @@ let display = "";
 let operatorDisplay = "";
 let temp;
 let iteration = 0;
-const buttonNumber = document.querySelectorAll(".btn.nbr");
+const buttonNumbers = document.querySelectorAll(".btn.nbr");
 const num = document.querySelector(".num");
 const operator = document.querySelector(".operator");
 const buttonSpecial  = document.querySelectorAll(".btn.special.fn");
@@ -22,7 +22,7 @@ del.addEventListener("click", (e) => {
 equal.addEventListener("click", (e) => {
         equalisation();
     });
-buttonNumber.forEach(btn => btn.addEventListener("click", (e) => {
+buttonNumbers.forEach(btn => btn.addEventListener("click", (e) => {
         enteredNumbers += e.target.innerHTML;
         display = enteredNumbers;
     })
@@ -30,18 +30,22 @@ buttonNumber.forEach(btn => btn.addEventListener("click", (e) => {
 buttonSpecial.forEach(btn => btn.addEventListener("click", (e) => {
         if (iteration == 0) {
             enteredNumbers = Number(enteredNumbers);
-            temp = enteredNumbers;
+            temp = Math.round((enteredNumbers + Number.EPSILON) * 1000000000000) / 1000000000000;
             enteredNumbers = "";
             operatorDisplay = e.target.innerHTML;
             display = temp;
             iteration += 1;
-        } else if (enteredNumbers == "") {
+        } 
+        
+        else if (enteredNumbers == "") {
             operatorDisplay = e.target.innerHTML;
-        } else {
+        } 
+        
+        else {
             enteredNumbers = Number(enteredNumbers);
             operate(temp, enteredNumbers);
-            display = results;
-            temp = results;
+            display = Math.round((results + Number.EPSILON) * 1000000000000) / 1000000000000;
+            temp = Math.round((results + Number.EPSILON) * 1000000000000) / 1000000000000;
             enteredNumbers = "";
             operatorDisplay = e.target.innerHTML;
         };
@@ -60,22 +64,26 @@ window.addEventListener('keydown', (event) => {
             temp = enteredNumbers;
             enteredNumbers = "";
             operatorDisplay = keySpecial.innerHTML;
-            display = temp;
+            display = Math.round((temp + Number.EPSILON) * 1000000000000) / 1000000000000;
             iteration += 1;
             keySpecial.classList.add("pushed")
             setTimeout(() => {
                 keySpecial.classList.remove("pushed")
                 }, 100);
-        } else if (enteredNumbers == "") {
+        } 
+        
+        else if (enteredNumbers == "") {
             operatorDisplay = keySpecial.innerHTML;
             keySpecial.classList.add("pushed")
             setTimeout(() => {
             keySpecial.classList.remove("pushed")
             }, 100);
-        } else {
+        } 
+        
+        else {
             enteredNumbers = Number(enteredNumbers);
             operate(temp, enteredNumbers);
-            display = results;
+            display = Math.round((results + Number.EPSILON) * 1000000000000) / 1000000000000;
             temp = results;
             enteredNumbers = "";
             operatorDisplay = keySpecial.innerHTML;
@@ -84,20 +92,26 @@ window.addEventListener('keydown', (event) => {
             keySpecial.classList.remove("pushed")
             }, 100);
     };
-    }else if (keyNbr !== null) {
+    }
+    
+    else if (keyNbr !== null) {
         enteredNumbers += keyNbr.innerHTML;
         display = enteredNumbers;
         keyNbr.classList.add("pushed")
         setTimeout(() => {
         keyNbr.classList.remove("pushed")
         }, 100);
-    }else if (keyBspc !== null) {
+    }
+    
+    else if (keyBspc !== null) {
         backspace();
         keyBspc.classList.add("pushed")
         setTimeout(() => {
         keyBspc.classList.remove("pushed")
         }, 100);
-    }else if (keyDel !== null) {
+    }
+    
+    else if (keyDel !== null) {
         deletion();
         keyDel.classList.add("pushed")
         setTimeout(() => {
@@ -133,7 +147,7 @@ function equalisation() {
     }else {
         enteredNumbers = Number(enteredNumbers);
         operate(temp, enteredNumbers);
-        display = results;
+        display = Math.round((results + Number.EPSILON) * 1000000000000) / 1000000000000;
         enteredNumbers = "";
         temp = results;
     }
@@ -168,14 +182,14 @@ function multiply(a, b) {
     return a * b;
 };
 function divide(a, b) {
-    if (a == 0 || b == 0) {
+    if (b == 0) {
         return display = "Divided by 0 Matrix.fatalError"
     } else {
     return (a / b);
     }
 };
 //Screen refreshing function
-setInterval(refresh, 10);
+setInterval(refresh, 50);
 function refresh() {
     num.innerHTML = display;
     operator.innerHTML = operatorDisplay;
