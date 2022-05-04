@@ -1,4 +1,12 @@
+<div align="center">
+ 
 # PROJECT-CALCULATOR
+ 
+<img alt="App preview" src="https://github.com/MaciejDabrowskii/PROJECT-CALCULATOR/blob/main/PROJECT-CALCULATOR-preview.jpg">
+
+</div>
+<br>
+
 I'm going to combine everything i’ve learned so far: i'm going to make an on-screen calculator using JavaScript, HTML, and CSS.
 
 🔗 <b> [Live preview](https://maciejdabrowskii.github.io/PROJECT-CALCULATOR/)</b>
